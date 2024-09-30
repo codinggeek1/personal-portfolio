@@ -1,62 +1,36 @@
-// Dark Mode Toggle with localStorage
+// Dark Mode Toggle
 const toggleButton = document.getElementById('dark-mode-toggle');
 const body = document.body;
 
-// Check localStorage for the dark mode setting
-if (localStorage.getItem('dark-mode') === 'enabled') {
-    body.classList.add('dark-mode');
-    toggleButton.textContent = '☀️';
-}
-
-// Toggle dark mode
 toggleButton.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
-    
-    if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('dark-mode', 'enabled');
-        toggleButton.textContent = '☀️';  // Switch to sun icon
-    } else {
-        localStorage.setItem('dark-mode', 'disabled');
-        toggleButton.textContent = '🌙';  // Switch to moon icon
-    }
+    toggleButton.textContent = body.classList.contains('dark-mode') ? '☀️' : '🌙';
 });
 
 // Smooth Scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
         e.preventDefault();
-
-        const targetElement = document.querySelector(this.getAttribute('href'));
-        targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
         });
     });
 });
 
-// Form Validation with better email validation
+// Form Validation
 const form = document.getElementById('contact-form');
 
 form.addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
-    if (!name || !email || !message) {
+    if (name === '' || email === '' || message === '') {
         alert('Please fill in all fields.');
-        return;
+    } else {
+        alert('Message sent successfully!');
+        form.reset();
     }
-
-    // Simple email validation regex
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-        alert('Please enter a valid email address.');
-        return;
-    }
-
-    // If all checks pass, show success message
-    alert('Message sent successfully!');
-    form.reset();
 });
