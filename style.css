@@ -2,42 +2,125 @@
 body, h1, h2, h3, p, ul, li {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* Global styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif; /* Choose a modern font */
   font-size: 16px;
   line-height: 1.5;
+  color: #333;
 }
 
 /* Header styles */
 header {
-  background-color: #333;
-  color: #fff;
+  background-color: #f5f5f5;
   padding: 20px;
 }
 
 /* Navigation styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 nav ul {
   list-style: none;
   display: flex;
-  justify-content: space-between;
 }
 
 nav ul li {
-  margin: 0 10px;
+  margin: 0 15px;
 }
 
 nav ul li a {
-  color: #fff;
+  color: #333;
   text-decoration: none;
-  padding: 10px;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease-in-out;
 }
 
-/* Main content styles */
-main {
+nav ul li a:hover {
+  background-color: #e6e6e6;
+}
+
+/* Hero section styles */
+#hero {
+  background-image: url('path/to/your/hero-image.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Project section styles */
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: calc(33.33% - 20px); /* Adjust for 3-column layout */
+}
+
+.project img {
+  width: 100%;
+  height: auto;
+}
+
+.project-info {
   padding: 20px;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.project-description {
+  margin-bottom: 15px;
+}
+
+/* Skills section styles */
+.skills {
+  text-align: center;
+}
+
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.skill-item {
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+
+/* Contact section styles */
+#contact {
+  background-color: #f5f5f5;
+  padding: 40px;
+}
+
+/* Form styles */
+form {
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Footer styles */
