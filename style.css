@@ -1,20 +1,20 @@
 /* General Body Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #333; /* Dark background for dark mode */
+    color: #f4f4f4; /* Light text color */
     margin: 0;
     padding: 0;
     line-height: 1.6;
     background-image: url('bg.jpg'); /* Add the background image here */
     background-size: cover; /* Cover the whole screen */
     background-position: center;
-    background-attachment: fixed; /* Make sure it doesn't scroll with content */
+    background-attachment: fixed; /* Ensure the background doesn't scroll */
 }
 
 /* Header */
 header {
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent for better visibility */
+    background-color: rgba(34, 34, 34, 0.8); /* Semi-transparent dark background for visibility */
     color: #fff;
     padding: 20px;
     text-align: center;
@@ -66,9 +66,9 @@ section {
     max-width: 800px;
     margin: 40px 0;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Transparent background to make text readable */
+    background-color: rgba(68, 68, 68, 0.9); /* Transparent dark background for readability */
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 h2 {
@@ -156,10 +156,12 @@ h2 {
     width: 90%; /* Ensure proper width alignment */
     padding: 15px;
     margin: 10px 0;
-    border: 1px solid #ddd;
+    border: 1px solid #555; /* Darker borders for dark mode */
     border-radius: 4px;
     font-size: 16px;
     max-width: 600px; /* Limit the maximum width */
+    background-color: #444; /* Darker input background */
+    color: white; /* Light text color */
 }
 
 #contact textarea {
@@ -200,28 +202,29 @@ h2 {
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #333;
+    background-color: rgba(34, 34, 34, 0.8);
     color: white;
     font-size: 14px;
     margin-top: 40px;
 }
 
-/* Dark Mode */
-.dark-mode {
-    background-color: #333;
-    color: #f4f4f4;
+/* Light Mode */
+.light-mode {
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-.dark-mode section {
-    background-color: rgba(68, 68, 68, 0.9); /* Ensure readability */
+.light-mode section {
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
-.dark-mode header {
-    background-color: rgba(34, 34, 34, 0.8);
+.light-mode header {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
 }
 
-.dark-mode footer {
-    background-color: rgba(34, 34, 34, 0.8);
+.light-mode footer {
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 /* Responsive Design */
