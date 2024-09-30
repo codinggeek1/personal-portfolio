@@ -13,6 +13,7 @@ body {
 
 .container {
     width: 90%;
+    max-width: 1200px; /* Set a max-width for better layout */
     margin: 0 auto;
 }
 
@@ -20,6 +21,7 @@ header {
     background-color: #333;
     color: #fff;
     padding: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
 }
 
 header nav {
@@ -31,22 +33,32 @@ header nav {
 header nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 30px; /* Increase gap for better spacing */
 }
 
 header nav ul li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s; /* Smooth color transition on hover */
+}
+
+header nav ul li a:hover {
+    color: #ff5722; /* Change color on hover */
 }
 
 #hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/hero-bg.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/images/hero-bg.jpg') no-repeat center center/cover;
     color: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    text-align: center; /* Center the text */
+}
+
+#hero h2 {
+    font-size: 2.5rem; /* Increase font size for emphasis */
 }
 
 #hero h2 span {
@@ -54,53 +66,78 @@ header nav ul li a {
 }
 
 .btn {
-    padding: 10px 20px;
+    padding: 10px 25px; /* Increase padding for larger buttons */
     background-color: #ff5722;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s; /* Add transition effects */
+}
+
+.btn:hover {
+    background-color: #e64a19; /* Darker shade on hover */
+    transform: translateY(-2px); /* Lift effect on hover */
 }
 
 .section {
-    padding: 60px 0;
+    padding: 80px 0; /* Increase padding for sections */
+    text-align: center; /* Center align section headings */
 }
 
 .project-list {
     display: flex;
-    gap: 20px;
+    gap: 30px; /* Increased gap */
     flex-wrap: wrap;
+    justify-content: center; /* Center projects */
 }
 
 .project {
-    flex: 1 1 45%;
+    flex: 1 1 300px; /* Set minimum width for projects */
     border: 1px solid #ddd;
     padding: 20px;
     text-align: center;
+    transition: transform 0.2s; /* Add transform effect */
+}
+
+.project:hover {
+    transform: scale(1.02); /* Slight zoom effect on hover */
 }
 
 .project img {
     width: 100%;
     height: auto;
+    border-radius: 5px; /* Round corners of images */
 }
 
 .skills-list {
     display: flex;
-    gap: 10px;
+    gap: 15px; /* Increase gap */
     flex-wrap: wrap;
+    justify-content: center; /* Center align skills */
 }
 
 .skills-list li {
-    padding: 10px 15px;
+    padding: 10px 20px;
     background-color: #ff5722;
     color: #fff;
     border-radius: 5px;
+    transition: background-color 0.3s; /* Smooth transition */
+}
+
+.skills-list li:hover {
+    background-color: #e64a19; /* Darker on hover */
 }
 
 .socials a {
     color: #ff5722;
-    margin-right: 10px;
+    margin-right: 15px;
     text-decoration: none;
+    transition: color 0.3s; /* Smooth transition */
+}
+
+.socials a:hover {
+    color: #e64a19; /* Darker shade on hover */
 }
 
 footer {
@@ -114,12 +151,18 @@ footer {
     position: fixed;
     top: 20px;
     right: 20px;
-    padding: 10px;
+    padding: 10px 15px; /* Slightly larger padding */
     background-color: #ff5722;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s; /* Add transitions */
+}
+
+#dark-mode-toggle:hover {
+    background-color: #e64a19; /* Darker on hover */
+    transform: translateY(-2px); /* Lift effect */
 }
 
 .dark-mode {
@@ -147,5 +190,13 @@ footer {
     .skills-list {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    header nav ul {
+        flex-direction: column; /* Stack links vertically */
+    }
+
+    header nav ul li {
+        margin-bottom: 10px; /* Space between vertical links */
     }
 }
