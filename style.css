@@ -1,47 +1,86 @@
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav a {
+    margin: 0 15px;
+    color: #fff;
+    text-decoration: none;
+}
+
+header button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #fff;
+    cursor: pointer;
+}
+
 /* Container Styles */
 .container {
     display: flex;
-    flex-direction: column; /* Stack sections vertically */
+    flex-direction: column;
     align-items: center;
     padding: 20px;
-    background-color: #f4f4f4; /* Light background */
+    background-color: #f4f4f4;
 }
 
-/* Section Styling */
 section {
     width: 100%;
-    padding: 20px;
+    max-width: 800px;
     margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Section Backgrounds */
-#about {
-    background-color: #fff; /* White background */
-    color: #333; /* Dark text for contrast */
+h2 {
+    text-align: center;
+    font-size: 24px;
 }
 
-#projects {
-    background-color: #f7f7f7; /* Light grey background */
-    color: #333; 
+/* Project Section */
+.project {
+    text-align: center;
+    margin: 20px 0;
 }
 
-#skills, #contact {
-    background-color: #eaeaea;
-    color: #333;
+.project img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
 }
 
-/* Dark Mode Toggle Styling */
-.dark-mode #about, 
-.dark-mode #projects,
-.dark-mode #skills,
-.dark-mode #contact {
-    background-color: #333;
-    color: #f4f4f4;
+/* Skills List */
+#skills ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-/* Form Inputs and Button */
+#skills li {
+    background-color: #ff7043;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Contact Form */
 input, textarea {
     width: 100%;
     padding: 10px;
@@ -59,14 +98,36 @@ button {
     cursor: pointer;
 }
 
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #333;
+    color: #f4f4f4;
+}
+
+.dark-mode section {
+    background-color: #444;
+}
+
+.dark-mode header {
+    background-color: #222;
+}
+
+.dark-mode footer {
+    background-color: #222;
+}
+
 /* Ensure responsive layout */
 @media (min-width: 768px) {
     .container {
-        flex-direction: row;
+        flex-direction: column;
         justify-content: space-between;
-    }
-    
-    section {
-        width: 45%;
     }
 }
